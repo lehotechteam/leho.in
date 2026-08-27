@@ -64,3 +64,9 @@ This is a static website that can be deployed to any web server or static hostin
 ## 📄 License
 
 See LICENSE file for details
+
+## 📧 Contact
+
+For questions or support regarding this legacy website, please contact:
+- **Email:** president@leho.in
+- **Phone:** +91 9419180650
