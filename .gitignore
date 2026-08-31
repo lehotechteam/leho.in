@@ -1,5 +1,7 @@
 node_modules/
 dist/
+.next/
+*.tsbuildinfo
 
 # Logs
 logs
@@ -25,3 +27,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
+.env*
