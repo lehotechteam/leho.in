@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { SessionProvider } from 'next-auth/react'
 import { Layout } from './components/Layout'
 
 export const metadata: Metadata = {
@@ -70,7 +71,11 @@ export default function RootLayout({
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       </head>
-      <body><Layout>{children}</Layout></body>
+      <body>
+        <SessionProvider>
+          <Layout>{children}</Layout>
+        </SessionProvider>
+      </body>
     </html>
   )
 }
