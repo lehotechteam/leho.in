@@ -6,6 +6,10 @@ export function formatLocalDate(date: Date) {
   return `${year}-${month}-${day}`;
 }
 
-export function isTenderLive(endDate: string, now = new Date()) {
+export function isTenderLive(endDate: string | null | undefined, now = new Date()) {
+  if (!endDate || !/^\d{4}-\d{2}-\d{2}$/.test(endDate)) {
+    return false;
+  }
+
   return formatLocalDate(now) <= endDate;
 }

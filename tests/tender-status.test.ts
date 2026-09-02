@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { isTenderLive } from '../app/lib/tender-status.ts';
+import { isTenderLive } from '../app/lib/tender-status';
 
 test('treats a tender ending yesterday as archived when the local date has moved on', () => {
   const now = new Date('2026-09-02T00:30:00+05:30');

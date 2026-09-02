@@ -10,6 +10,8 @@ const monthFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
 })
 
+export const dynamic = 'force-dynamic'
+
 export default async function Tenders() {
   const tenderRows = await db
     .select({
