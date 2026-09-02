@@ -2,12 +2,15 @@ import { desc } from 'drizzle-orm'
 import { Download, ExternalLink } from 'lucide-react'
 import { ContentPage } from '../components/PageComponents'
 import { db } from '../lib/db'
+import { isTenderLive } from '../lib/tender-status'
 import { tenders } from '../lib/schema'
 
 const monthFormatter = new Intl.DateTimeFormat('en-US', {
   month: 'long',
   year: 'numeric',
 })
+
+export const dynamic = 'force-dynamic'
 
 export default async function Tenders() {
   const tenderRows = await db
@@ -22,13 +25,12 @@ export default async function Tenders() {
     .from(tenders)
     .orderBy(desc(tenders.endDate), desc(tenders.startDate))
 
-  const today = new Date().toISOString().slice(0, 10)
   const liveTenders = tenderRows
-    .filter((tender) => today <= tender.endDate)
+    .filter((tender) => isTenderLive(tender.endDate))
     .map((tender) => ({ ...tender, isActive: true }))
 
   const archivedTenders = tenderRows
-    .filter((tender) => today > tender.endDate)
+    .filter((tender) => !isTenderLive(tender.endDate))
     .map((tender) => ({ ...tender, isActive: false }))
 
   const groupByMonth = (items: Array<typeof liveTenders[number]>) => {

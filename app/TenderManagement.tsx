@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Upload, Trash2, FileText, CheckCircle, AlertCircle, RefreshCw } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { signOut, useSession } from 'next-auth/react';
+import { Upload, Trash2, FileText, CheckCircle, AlertCircle, RefreshCw, LogOut } from 'lucide-react';
 import { uploadTenderFile, listTenderFiles, deleteTenderFile, type TenderFile } from './lib/blob';
 
 interface UploadStatus {
@@ -11,6 +13,9 @@ interface UploadStatus {
 }
 
 export function TenderManagement() {
+  const router = useRouter();
+  const sessionResult = useSession();
+  const session = sessionResult?.data;
   const [files, setFiles] = useState<TenderFile[]>([]);
   const [loading, setLoading] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -131,10 +136,22 @@ export function TenderManagement() {
     });
   };
 
+  const handleSignOut = async () => {
+    await signOut({ callbackUrl: '/login' });
+    router.push('/login');
+  };
+
   return (
     <div className="tender-management">
       <div className="tender-management-header">
-        <h2>Tender File Management</h2>
+        <div>
+          <h2>Tender File Management</h2>
+          <p className="logged-in-user">Logged in as: {session?.user?.email || 'Admin'}</p>
+        </div>
+        <button type="button" className="refresh-button" onClick={handleSignOut}>
+          <LogOut size={16} />
+          Sign out
+        </button>
       </div>
 
       <div className="upload-section">
