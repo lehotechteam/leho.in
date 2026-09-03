@@ -219,7 +219,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .empty-tender-section { padding: 2rem 0; color: var(--muted); font-size: 0.95rem; }
 
 .site-footer { padding: 4rem 0 2rem; background: var(--ink); color: #fff; }
-.footer-inner { position: relative; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 2rem; }
+.footer-inner { position: relative; display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; gap: 2rem; }
 .footer-inner > div > strong { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
 .footer-inner p { margin-top: 0.8rem; color: rgba(255,255,255,0.62); font-size: 0.85rem; }
 .footer-inner a { color: rgba(255,255,255,0.8); text-decoration: none; }
@@ -228,7 +228,11 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .footer-socials > p { margin-top: 0; color: #e8c479; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 .footer-socials > div { display: flex; gap: 0.75rem; margin-top: 0.9rem; }
 .footer-socials > div a { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.25); }
-.back-top { position: absolute; right: 0; bottom: 0; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.35); }
+.back-top { position: absolute; right: 0; bottom: 2rem; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.35); }
+.footer-credit { display: flex; align-items: flex-end; }
+.footer-credit span { color: rgba(255,255,255,0.3); font-size: 0.65rem; margin-right: 0.3rem; }
+.footer-credit a { color: rgba(255,255,255,0.3); font-size: 0.65rem; text-decoration: none; }
+.footer-credit a:hover { color: rgba(255,255,255,0.5); }
 
 .tender-management { max-width: 920px; padding: 1.5rem; border: 1px solid var(--line); background: var(--surface); }
 .tender-management-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
@@ -316,8 +320,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
   .gallery-item-large { grid-row: span 2; }
   .tender-group { grid-template-columns: 1fr; gap: 1rem; }
   .tender-items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr auto; }
   .footer-socials { grid-column: 1 / -1; }
+  .footer-credit { grid-column: 1 / -1; }
 }
 
 @media (max-width: 480px) {
@@ -335,6 +340,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
   .lightbox-nav.next { right: 0.75rem; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-socials { grid-column: auto; }
+  .footer-credit { grid-column: auto; }
   .back-top { position: static; margin-top: 1rem; }
   .tender-management { padding: 1rem; }
   .date-fields { grid-template-columns: 1fr; }

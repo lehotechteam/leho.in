@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { SessionProvider } from 'next-auth/react'
 import { Layout } from './components/Layout'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://leho.in'),
@@ -75,6 +77,8 @@ export default function RootLayout({
         <SessionProvider>
           <Layout>{children}</Layout>
         </SessionProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )

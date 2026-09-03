@@ -8,10 +8,10 @@ import { ContentPage } from '../components/PageComponents'
 
 const socialLinks = [
   { name: 'Facebook', handle: '@LadakhEnvironmentandHealthOrganization', href: 'https://www.facebook.com/LadakhEnvironmentandHealthOrganization/', icon: FaFacebookF },
-  { name: 'LinkedIn', handle: '@leho-ladakh', href: 'https://www.linkedin.com/company/ladakh-environment-and-health-organization/', icon: FaLinkedinIn },
-  { name: 'X', handle: '@LEHO_Ladakh', href: 'https://x.com/LEHO_Ladakh', icon: FaXTwitter },
-  { name: 'Instagram', handle: '@leho_ladakh', href: 'https://www.instagram.com/leho_ladakh/', icon: FaInstagram },
-  { name: 'YouTube', handle: '@LEHO Ladakh', href: 'https://www.youtube.com/results?search_query=Ladakh+Environment+and+Health+Organization', icon: FaYoutube },
+  { name: 'LinkedIn', handle: '@leho-ladakh', href: 'https://www.linkedin.com/company/leho-ladakh/', icon: FaLinkedinIn },
+  { name: 'X', handle: '@leho_ladakh', href: 'https://x.com/leho_ladakh', icon: FaXTwitter },
+  { name: 'Instagram', handle: '@leho_ladakh_india', href: 'https://www.instagram.com/leho_ladakh_india', icon: FaInstagram },
+  { name: 'YouTube', handle: '@LEHO_LADAKH', href: 'https://www.youtube.com/@LEHO_LADAKH', icon: FaYoutube },
 ]
 
 const initialForm = {

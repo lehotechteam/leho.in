@@ -19,10 +19,10 @@ const navigation = [
 
 const socialLinks = [
   { name: 'Facebook', handle: '@LadakhEnvironmentandHealthOrganization', href: 'https://www.facebook.com/LadakhEnvironmentandHealthOrganization/', icon: FaFacebookF },
-  { name: 'LinkedIn', handle: '@leho-ladakh', href: 'https://www.linkedin.com/company/ladakh-environment-and-health-organization/', icon: FaLinkedinIn },
-  { name: 'X', handle: '@LEHO_Ladakh', href: 'https://x.com/LEHO_Ladakh', icon: FaXTwitter },
-  { name: 'Instagram', handle: '@leho_ladakh', href: 'https://www.instagram.com/leho_ladakh/', icon: FaInstagram },
-  { name: 'YouTube', handle: '@LEHO Ladakh', href: 'https://www.youtube.com/results?search_query=Ladakh+Environment+and+Health+Organization', icon: FaYoutube },
+  { name: 'LinkedIn', handle: '@leho-ladakh', href: 'https://www.linkedin.com/company/leho-ladakh/', icon: FaLinkedinIn },
+  { name: 'X', handle: '@leho_ladakh', href: 'https://x.com/leho_ladakh', icon: FaXTwitter },
+  { name: 'Instagram', handle: '@leho_ladakh_india', href: 'https://www.instagram.com/leho_ladakh_india', icon: FaInstagram },
+  { name: 'YouTube', handle: '@LEHO_LADAKH', href: 'https://www.youtube.com/@LEHO_LADAKH', icon: FaYoutube },
 ]
 
 export function Layout({ children }: { children: ReactNode }) {
@@ -36,6 +36,6 @@ export function Layout({ children }: { children: ReactNode }) {
       <nav id="main-navigation" className={menuOpen ? 'main-nav open' : 'main-nav'} aria-label="Main navigation">{navigation.map(([path, label]) => <Link key={path} href={path} onClick={() => setMenuOpen(false)} className={pathname === path ? 'active' : ''}>{label}</Link>)}</nav>
     </div></header>
     <main>{children}</main>
-    <footer className="site-footer"><div className="container footer-inner"><div><strong>LEHO</strong><p>G H Road, Skara Juk, Leh, Ladakh, 194101<br />J&K, India</p></div><div><p><a href="tel:+911982252944"><Phone size={14} /> +91 1982 252944</a><br /><a href="mailto:president@leho.in"><Mail size={14} /> president@leho.in</a></p></div><div className="footer-socials"><p>Follow LEHO</p><div>{socialLinks.map((social) => { const SocialIcon = social.icon; return <a href={social.href} target="_blank" rel="noreferrer" aria-label={`${social.name}: ${social.handle}`} key={social.name}><SocialIcon aria-hidden="true" /></a> })}</div></div><a className="back-top" href="#top" aria-label="Back to top"><ChevronUp /></a></div></footer>
+    <footer className="site-footer"><div className="container footer-inner"><div><strong>LEHO</strong><p>G H Road, Skara Juk, Leh, Ladakh, 194101<br />J&K, India</p></div><div><p><a href="tel:+911982252944"><Phone size={14} /> +91 1982 252944</a><br /><a href="mailto:president@leho.in"><Mail size={14} /> president@leho.in</a></p></div><div className="footer-socials"><p>Follow LEHO</p><div>{socialLinks.map((social) => { const SocialIcon = social.icon; return <a href={social.href} target="_blank" rel="noreferrer" aria-label={`${social.name}: ${social.handle}`} key={social.name}><SocialIcon aria-hidden="true" /></a> })}</div></div><div className="footer-credit"><span>Developed by </span><a href="https://mukulkumar.dev" target="_blank" rel="noreferrer">mukulkumar.dev</a></div><a className="back-top" href="#top" aria-label="Back to top"><ChevronUp /></a></div></footer>
   </div>
 }
